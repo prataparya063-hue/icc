@@ -5,10 +5,10 @@ import { fetchDashboardData } from '../services/api';
 // Placeholder data in case API fails or env vars are missing
 const PLACEHOLDER_DATA: DashboardResponse = {
   kpis: {
-    totalSales: 124500,
-    orders: 1423,
-    customers: 892,
-    profit: 45600,
+    todayRevenue: 12450,
+    todayOrders: 142,
+    mtdRevenue: 124500,
+    arpu: 139.47,
   },
   charts: {
     salesTrend: [
@@ -35,14 +35,13 @@ const PLACEHOLDER_DATA: DashboardResponse = {
       { name: 'Crypto', value: 100 },
     ],
   },
-  recentInvoices: [
-    { id: 'INV-001', customerName: 'Acme Corp', amount: 1500, status: 'Paid', date: '2023-10-01' },
-    { id: 'INV-002', customerName: 'Globex', amount: 2300, status: 'Pending', date: '2023-10-02' },
-    { id: 'INV-003', customerName: 'Soylent', amount: 890, status: 'Failed', date: '2023-10-03' },
-    { id: 'INV-004', customerName: 'Initech', amount: 4500, status: 'Paid', date: '2023-10-04' },
-    { id: 'INV-005', customerName: 'Umbrella', amount: 3100, status: 'Paid', date: '2023-10-05' },
-    { id: 'INV-006', customerName: 'Stark Ind', amount: 12000, status: 'Pending', date: '2023-10-06' },
-  ]
+  topReps: [
+    { id: '1', salesRep: 'Alice Johnson', dayOrders: 28, dayRevenue: 3200, mtdOrders: 420, mtdRevenue: 48000, targetPercent: 92 },
+    { id: '2', salesRep: 'Bob Smith', dayOrders: 24, dayRevenue: 2800, mtdOrders: 380, mtdRevenue: 43500, targetPercent: 84 },
+    { id: '3', salesRep: 'Carol White', dayOrders: 31, dayRevenue: 3900, mtdOrders: 460, mtdRevenue: 52000, targetPercent: 98 },
+    { id: '4', salesRep: 'David Lee', dayOrders: 19, dayRevenue: 2100, mtdOrders: 310, mtdRevenue: 35000, targetPercent: 71 },
+    { id: '5', salesRep: 'Eva Martinez', dayOrders: 22, dayRevenue: 2600, mtdOrders: 350, mtdRevenue: 40000, targetPercent: 78 },
+  ],
 };
 
 export const useDashboardData = () => {
