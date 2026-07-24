@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useDashboardData } from '../hooks/useDashboardData';
 import { Layout } from '../components/Layout';
 import { LoadingSkeleton } from '../components/LoadingSkeleton';
@@ -123,7 +123,7 @@ export const Dashboard: React.FC = () => {
                   dataKey="value"
                   stroke="none"
                 >
-                  {data.charts.paymentMethods.map((entry, index) => (
+                  {data.charts.paymentMethods.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
@@ -148,7 +148,7 @@ export const Dashboard: React.FC = () => {
                 <YAxis stroke="#a3a3a3" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value/1000}k`} />
                 <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#262626', opacity: 0.4 }} />
                 <Bar dataKey="amount" name="Sales" radius={[4, 4, 0, 0]}>
-                  {data.charts.monthlySales.map((entry, index) => (
+                  {data.charts.monthlySales.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={index === data.charts.monthlySales.length - 1 ? '#8b5cf6' : '#3b82f6'} />
                   ))}
                 </Bar>
