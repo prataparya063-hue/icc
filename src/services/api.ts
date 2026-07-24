@@ -14,7 +14,11 @@ const api = axios.create({
 });
 
 export const fetchDashboardData = async (): Promise<DashboardResponse> => {
-  // We use a POST request as specified: /rest/v1/rpc/dashboard_json
-  const response = await api.post('/rest/v1/rpc/dashboard_json');
+  // If VITE_SUPABASE_URL already includes the RPC path (e.g., from user input), use it directly.
+  // Otherwise, fallback to the default dashboard_json endpoint.
+  const hasRpcPath = supabaseUrl?.includes('/rest/v1/rpc/');
+  const endpoint = hasRpcPath ? '' : '/rest/v1/rpc/dashboard_json';
+  
+  const response = await api.post(endpoint);
   return response.data;
 };
