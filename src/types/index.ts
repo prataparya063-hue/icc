@@ -13,25 +13,27 @@ export interface PaymentMethod {
   value: number;
 }
 
-export interface Invoice {
+export interface TopRep {
   id: string;
-  customerName: string;
-  amount: number;
-  status: 'Paid' | 'Pending' | 'Failed';
-  date: string;
+  salesRep: string;
+  dayOrders: number;
+  dayRevenue: number;
+  mtdOrders: number;
+  mtdRevenue: number;
+  targetPercent: number;
 }
 
 export interface DashboardResponse {
   kpis: {
-    totalSales: number;
-    orders: number;
-    customers: number;
-    profit: number;
+    todayRevenue: number;
+    todayOrders: number;
+    mtdRevenue: number;
+    arpu: number;
   };
   charts: {
     salesTrend: SalesData[];
     monthlySales: MonthlySales[];
     paymentMethods: PaymentMethod[];
   };
-  recentInvoices: Invoice[];
+  topReps: TopRep[];
 }

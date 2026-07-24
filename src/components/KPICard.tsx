@@ -21,11 +21,11 @@ export const KPICard: React.FC<KPICardProps> = ({ title, value, icon, trend, cla
           {icon}
         </div>
       </div>
-      <div className="flex flex-col gap-1">
-        <span className="text-3xl font-semibold tracking-tight">{value}</span>
+      <div className="flex items-baseline gap-2 mt-2">
+        <span className="text-3xl font-bold tracking-tight">{value}</span>
         {trend && (
-          <span className={cn("text-xs font-medium", trend.isPositive ? "text-emerald-500" : "text-rose-500")}>
-            {trend.isPositive ? '+' : '-'}{Math.abs(trend.value)}% from last month
+          <span className={cn("text-sm font-medium", trend.isPositive ? "text-emerald-500" : "text-rose-500")}>
+            {trend.isPositive ? '+' : '-'}{Math.abs(trend.value)}%
           </span>
         )}
       </div>

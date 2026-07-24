@@ -15,7 +15,7 @@ export const ChartCard: React.FC<ChartCardProps> = ({ title, subtitle, children,
         <h3 className="text-lg font-semibold">{title}</h3>
         {subtitle && <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>}
       </div>
-      <div className="flex-1 w-full h-[300px]">
+      <div className="flex flex-col flex-1 min-h-0">
         {children}
       </div>
     </div>

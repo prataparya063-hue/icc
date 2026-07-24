@@ -17,12 +17,12 @@ const headers = {
 };
 
 const tests = [
-  { method: 'POST', url: `${baseUrl}/rest/v1/rpc/combined_report`, body: undefined },
-  { method: 'POST', url: `${baseUrl}/rest/v1/rpc/combined_report`, body: JSON.stringify({}) },
-  { method: 'GET', url: `${baseUrl}/rest/v1/rpc/combined_report`, body: undefined },
-  { method: 'GET', url: `${baseUrl}/rest/v1/combined_report`, body: undefined },
-  { method: 'GET', url: `${baseUrl}/rest/v1/combined_report?select=*`, body: undefined },
-  { method: 'POST', url: `${baseUrl}/functions/v1/combined_report`, body: undefined }
+  { method: 'POST', url: `${baseUrl}/rest/v1/rpc/dashboard_json`, body: undefined },
+  { method: 'POST', url: `${baseUrl}/rest/v1/rpc/dashboard_json`, body: JSON.stringify({}) },
+  { method: 'GET', url: `${baseUrl}/rest/v1/rpc/dashboard_json`, body: undefined },
+  { method: 'GET', url: `${baseUrl}/rest/v1/dashboard_json`, body: undefined },
+  { method: 'GET', url: `${baseUrl}/rest/v1/dashboard_json?select=*`, body: undefined },
+  { method: 'POST', url: `${baseUrl}/functions/v1/dashboard_json`, body: undefined }
 ];
 
 async function runTests() {
